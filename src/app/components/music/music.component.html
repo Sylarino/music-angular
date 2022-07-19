@@ -1,0 +1,76 @@
+<form [formGroup]="uploadForm" class="form-music" action="">
+    <h2 class="section-title">Ingresar Album </h2>
+    <label for="album-name">
+        Nombre del Álbum
+    </label>
+    <br>
+    <input name="album-name" type="text">
+
+    <br>
+    <label for="artist">
+        Artista del Álbum
+    </label>
+    <br>
+    <input class="form-music--input" name="artist" type="text">
+
+    <br>
+    <label for="release">
+        Fecha de lanzamiento
+    </label>
+    <br>
+    <input name="release" type="date">
+
+    <br>
+    <label for="genre">
+        Generos
+    </label>
+    <br>
+    
+    <select name="nominations" #genres>
+        <option value="">Pop</option>
+        <option value="">Rock</option>
+        <option value="">Electronica</option>
+    </select>
+    <button (click)="addGenre()">Agregar</button>
+    <div class="container-table-genres" *ngIf="genresArray.length > 0">
+        <table name="table-genres" #genres_table>
+            <tr>
+                <th>Genero</th>    
+                <th>Eliminar</th>
+            </tr>
+            <tr *ngFor="let genreArray of genresArray">
+                <td>{{genreArray}}</td>
+                <td><button (click)="deleteSelectedRow(genreArray)">Eliminar</button></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <label for="cover">
+        Portada
+    </label>
+    <br>
+    <input name="cover" #coverFile type="file" accept="image/*" (change)="showPreviewCover($event)">
+
+    <div class="container-preview-cover" *ngIf="imageURL && imageURL !== ''">
+        <img #imgCover [src]="imageURL">
+        <button (click)="deletePreviewCover()">Eliminar</button>
+    </div>
+
+    <br>
+    <label for="nominations">
+        Nominaciones
+    </label>
+    <br>
+    <input name="nominations" type="text">
+
+    <br>
+    <label for="songs">
+        Canciones
+    </label>
+
+    <br>
+    <input name="songs" type="text">
+
+    <br>
+    <input type="button" value="REGISTRAR">
+</form>
