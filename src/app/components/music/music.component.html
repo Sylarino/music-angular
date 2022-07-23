@@ -61,8 +61,26 @@
         Nominaciones
     </label>
     <br>
-    <input name="nominations" type="text">
 
+    <select name="award" #awards>
+        <option value="">Grammy Awards</option>
+        <option value="">Brit Awards</option>
+        <option value="">Mercury Prize</option>
+    </select>   
+    <input type="number">
+    <input name="nominations" type="text">
+    <div>
+        <table name="table-nominations" #genres_table>
+            <tr>
+                <th>Genero</th>    
+                <th>Eliminar</th>
+            </tr>
+            <tr *ngFor="let genreArray of genresArray">
+                <td>{{genreArray}}</td>
+                <td><button (click)="deleteSelectedRow(genreArray)">Eliminar</button></td>
+            </tr>
+        </table> 
+    </div>
     <br>
     <label for="songs">
         Canciones
