@@ -57,20 +57,26 @@
     </div>
 
     <br>
+
+    <!-- Nominaciones del álbum -->
     <label for="nominations">
         Nominaciones
     </label>
     <br>
-
-    <select name="award" #awards>
+    <select name="award" #award>
+        <option value="" disabled selected>Seleccione premiación</option>
         <option value="">Grammy Awards</option>
         <option value="">Brit Awards</option>
         <option value="">Mercury Prize</option>
+    </select>
+    <select name="year_nomination" #year_nomination>
+        <option value="" disabled selected>Seleccione año</option>
+        <option *ngFor="let yearArray of yearsArray" value="">{{yearArray}}</option>
     </select>   
-    <input type="number">
-    <input name="nominations" type="text">
+    <input name="nomination" type="text" #nomination>
+    <button (click)="addNomination()">Agregar</button>
     <div>
-        <table name="table-nominations" #genres_table>
+        <table name="table-nominations" #nominations_table>
             <tr>
                 <th>Genero</th>    
                 <th>Eliminar</th>
@@ -82,6 +88,7 @@
         </table> 
     </div>
     <br>
+
     <label for="songs">
         Canciones
     </label>
