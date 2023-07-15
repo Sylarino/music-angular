@@ -23,7 +23,7 @@
     "carousel": "0.0.3",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.5.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
