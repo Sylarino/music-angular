@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-music',
@@ -13,10 +13,10 @@ export class MusicComponent implements OnInit {
   @ViewChild('genres', {static: false}) GenresArray!: ElementRef;
 
   imageURL!: string;
-  uploadForm!: FormGroup;
+  uploadForm!: UntypedFormGroup;
   genresArray : string[] = [];
 
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: UntypedFormBuilder) {
     this.uploadForm = this.fb.group({
       avatar: [null],
       name: ['']
@@ -69,7 +69,7 @@ export class MusicComponent implements OnInit {
 
 
 }
-function avatar(avatar: any, arg1: null[], name: void, arg3: string[]): FormGroup {
+function avatar(avatar: any, arg1: null[], name: void, arg3: string[]): UntypedFormGroup {
   throw new Error('Function not implemented.');
 }
 
