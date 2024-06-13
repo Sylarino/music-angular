@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "~18.0.2",
     "@angular/router": "~18.0.2",
     "animate.css": "^4.1.1",
-    "bxslider": "^4.2.14",
+    "bxslider": "^4.2.17",
     "carousel": "0.0.3",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
